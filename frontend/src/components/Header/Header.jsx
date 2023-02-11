@@ -8,11 +8,11 @@ const Header = () => {
   const dispatch=useDispatch();
 
   const {user}=useSelector((state)=>state.auth)
-useEffect(()=>{
-  if(!user){
-    history.navigate("/login")
-  }
-},[dispatch])
+// useEffect(()=>{
+//   if(!user){
+//     history.navigate("/login")
+//   }
+// },[dispatch])
   const handleLogout = () => {
     dispatch(logout())
   };

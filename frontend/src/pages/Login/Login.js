@@ -7,10 +7,10 @@ import {useSelector,useDispatch} from "react-redux"
 import { useNavigate } from "react-router-dom";
 import { reset } from "../../features/auth/authSlice"
 import { login } from "../../features/auth/authSlice";
-import {history} from "../../helpers/history"
 function Login() {
   const dispatch = useDispatch()
   const navigate=useNavigate()
+
   const {user,isLoading,isSuccess,isError,message}= useSelector((state)=>
     state.auth
   )
@@ -22,7 +22,6 @@ function Login() {
     if (isSuccess || user) {
       navigate("/");
     }
-
     dispatch(reset());
   }, [user, isError, isSuccess, message, navigate, dispatch]);
 

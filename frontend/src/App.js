@@ -12,9 +12,11 @@ import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css'
 import PrivateRoute from "./components/PrivateRoute";
 import {history} from "./helpers/history"
+import { useSelector } from "react-redux";
 function App() {
-  history.navigate = useNavigate();
-  history.location = useLocation();
+  const {isSuccess,isLoading,user}=useSelector((state)=>state.auth)
+  console.log(user)
+
   return (
     <>
       <Routes>
@@ -23,7 +25,7 @@ function App() {
           <Route path="/signup" element={<Signup />} />
         </Route>
         <Route element={<WithNav />}>
-          <Route exact path="/" element={<PrivateRoute><Home /></PrivateRoute>} />
+          <Route exact path="/" element={<PrivateRoute user={user} isLoading={isLoading}><Home /></PrivateRoute>} />
         </Route>
       </Routes>
       <ToastContainer/>
