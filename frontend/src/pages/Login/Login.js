@@ -7,6 +7,7 @@ import {useSelector,useDispatch} from "react-redux"
 import { useNavigate } from "react-router-dom";
 import { reset } from "../../features/auth/authSlice"
 import { login } from "../../features/auth/authSlice";
+import Spinner from "../../components/Layouts/Spinner";
 function Login() {
   const dispatch = useDispatch()
   const navigate=useNavigate()
@@ -52,6 +53,9 @@ function Login() {
   useEffect(() => {
     inputElement.current.focus();
   }, []);
+  if(isLoading){
+    return <Spinner/>;
+  }
   return (
     <div className={styles.container}>
       <div className={styles.container__left}>

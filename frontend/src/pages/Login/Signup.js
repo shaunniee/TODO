@@ -7,6 +7,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { history } from "../../helpers/history";
+import Spinner from "../../components/Layouts/Spinner";
 function Signup() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -75,7 +76,9 @@ function Signup() {
     inputRef.current.focus();
   }, []);
   const inputRef = useRef();
-
+  if(isLoading){
+    return <Spinner/>;
+  }
   return (
     <div className={styles.container}>
       <div className={styles.container__left}>
