@@ -1,0 +1,103 @@
+@import "../../styles/variables.scss";
+
+.container {
+  height: 100%;
+  display: grid;
+  background-color: $login-background;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  &__left {
+    color: white;
+    font-size: 6rem;
+    display: flex;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding: 3rem;
+    &_logo {
+      width: 15rem;
+      margin-bottom: 3rem;
+    }
+    &_desc {
+      font-size: 1.3rem;
+      margin-top: 3rem;
+    }
+  }
+  &__right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background-color: $default-background;
+    height: 100%;
+  }
+}
+
+.login {
+  width: 70%;
+  min-width: 320px;
+  padding: 2rem;
+  &__logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 4rem;
+    font-size: 2.5rem;
+    img {
+      width: 4rem;
+      margin-right: 1rem;
+    }
+  }
+  &__head {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 3rem;
+  }
+  &__bottom {
+    text-align: center;
+    margin-top: 2.5rem;
+    font-size: 1.6rem;
+    a {
+      color: green;
+      font-size: inherit;
+      text-decoration: none;
+    }
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 0 0 0;
+    label {
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+    }
+    input {
+      height: 3rem;
+      outline: none;
+      border-bottom: 1px solid #282a27;
+      box-shadow: none;
+      font-size: 1.6rem;
+    }
+  }
+  button {
+    margin-top: 3rem;
+    align-self: center;
+    font-size: 1.6rem;
+    padding: 1rem 5rem;
+    border-radius: 2rem;
+    background: #515350;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    &:hover{
+        background-color: lighten($color: #515350, $amount: 20);
+    }
+  }
+}

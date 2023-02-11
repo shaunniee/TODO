@@ -3,7 +3,7 @@ const colors = require('colors');
 const { json } = require("body-parser");
 const dotenv = require("dotenv").config();
 const connectDB=require("./config/db")
-const errorHandler=require('./middlewares/errorHandler')
+const {errorHandler}=require('./middlewares/errorHandler')
 connectDB()
 const PORT = process.env.PORT || 8000;
 const app = express();
